@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedulo Lite</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Schedulo Lite</h1>
+      <p>Smart Session Booking System</p>
+    </header>
+    
+    <main>
+      <section class="booking-section">
+        <h2>Available Time Slots</h2>
+        <div class="time-slots" id="time-slots-container">
+          <!-- Time slots will be populated here dynamically -->
+          <div class="loading">Loading time slots...</div>
+        </div>
+      </section>
+      
+      <!-- Booking Modal -->
+      <div id="booking-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Book a Session</h2>
+          <form id="booking-form">
+            <input type="hidden" id="slot-id" name="slotId">
+            <div class="form-group">
+              <label for="time-display">Time:</label>
+              <div id="time-display" class="time-display"></div>
+            </div>
+            <div class="form-group">
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Book Now</button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Confirmation Modal -->
+      <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Cancel Booking</h2>
+          <p>Are you sure you want to cancel this booking?</p>
+          <div class="booking-info">
+            <p>Time: <span id="cancel-time"></span></p>
+            <p>Booked by: <span id="cancel-name"></span></p>
+          </div>
+          <div class="modal-actions">
+            <button id="confirm-cancel" class="btn btn-danger">Yes, Cancel</button>
+            <button id="cancel-action" class="btn">No, Keep It</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <p>Schedulo Lite MVP &copy; 2025</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
